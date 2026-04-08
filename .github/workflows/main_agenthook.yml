@@ -52,7 +52,6 @@ jobs:
         with:
           name: python-app
           path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/release.zip
-            !venv/
 
   deploy:
     runs-on: ubuntu-latest
