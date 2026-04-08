@@ -4,7 +4,7 @@ import json
 
 app = func.FunctionApp()
 
-@app.route(route="telnyx_webhook", methods=["POST"])
+@app.route(route="telnyx_webhook", methods=["POST"], auth_level=func.AuthLevel.FUNCTION)
 def telnyx_webhook(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Telnyx webhook received a request.')
 
