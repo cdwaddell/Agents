@@ -51,8 +51,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: |
-            release.zip
+          path: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/release.zip
             !venv/
 
   deploy:
@@ -86,5 +85,5 @@ jobs:
         with:
           app-name: 'agenthook'
           slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          package: .
           
